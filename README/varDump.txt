@@ -1,0 +1,58 @@
+array(4) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL }
+array(4) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(1) "1" } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(1) "1" } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(10) "wispytitan" } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(10) "wispytitan" } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(4) "2531" } 
+array(5) { ["id"]=> NULL ["username"]=> NULL ["password"]=> NULL ["email"]=> NULL ["attribute"]=> string(4) "2531" }
+
+array(8) 
+{ 
+	[0]=> string(1) "1" 
+	["id"]=> string(1) "1" 
+	[1]=> string(10) "wispytitan" 
+	["username"]=> string(10) "wispytitan" 
+	[2]=> string(4) "2531" 
+	["password"]=> string(4) "2531" 
+	[3]=> string(20) "wispytitan@gmail.com" 
+	["email"]=> string(20) "wispytitan@gmail.com" 
+}
+
+array(4) 
+{ 
+	["id"]=> string(1) "1" 
+	["username"]=> string(10) "wispytitan" 
+	["password"]=> string(4) "2531" 
+	["email"]=> string(20) "wispytitan@gmail.com" 
+} 
+
+object(user)#5 (4) 
+{ 
+	["id"]=> string(1) "1" 
+	["username"]=> string(10) "wispytitan" 
+	["password"]=> string(4) "2531" 
+	["email"]=> string(20) "wispytitan@gmail.com" 
+}
+
+array(1) { 
+		[0]=> object(user)#5 (3) 
+		{ 
+			["id"]=> string(1) "1" 
+			["username"]=> string(10) "wispytitan" 
+			["email"]=> string(20) "wispytitan@gmail.com" 
+		} 
+}
+
+array(3)
+{ ["username"]=> string(5)
+ "hello" ["regEmail"]=> string(20)
+ "helloworld@gmail.com" ["regPassword"]=> string(4)
+ "2531" 
+} array(3)
+{ 
+ ["username"]=> string(5)
+ "hello" ["regEmail"]=> string(20)
+ "helloworld@gmail.com" ["regPassword"]=> string(4)
+ "2531" 
+}
