@@ -1,0 +1,10 @@
+Location Module
+	-Attributes-
+		id
+		name
+		location
+		picture(s)
+		description
+		rating
+		
+	-Functions-

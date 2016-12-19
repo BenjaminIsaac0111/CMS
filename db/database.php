@@ -34,7 +34,7 @@ class database{
 //run a query
 		public function query($sql){
 			$result = mysqli_query($this->connection,$sql);
-			//echo $sql;
+			//echo $sql."<br>";
 			$this->confirmQuery($result);
 			return $result;
 		} 
@@ -42,7 +42,7 @@ class database{
 //check if query was successful
 		private function confirmQuery($result){
 			if (!$result){
-				die("Query has failed");
+				die("Query has failed ");
 			}
 		}
 
@@ -55,12 +55,16 @@ class database{
 			return $stringPrepared;
 		}
 
-		public function validateEmail($email){
+		public function sanitizeEmail($email){
 			$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+			return $email;
+		}
+
+		public function validateEmail($email){
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 				return false;			
 			} else {
-			    return $email;
+			    return true;
 			}
 		}
 

@@ -5,7 +5,7 @@ class DatabaseObject
 	
 	public static function findById($id){
     $result_array = static::build("SELECT * FROM ".static::$table_name." WHERE id='$id' LIMIT 1");
-		return !empty($result_array) ? array_shift($result_array) : false;
+	return !empty($result_array) ? array_shift($result_array) : false;
   	}
 
 
@@ -37,12 +37,23 @@ class DatabaseObject
 	private function hasAttribute($attribute){
 		//find out what attributes are present to the object.
  
-	  $object_vars = get_object_vars($this);
-	  return array_key_exists($attribute, $object_vars);
+		$object_vars = get_object_vars($this);
+		return array_key_exists($attribute, $object_vars);
 	}
 	
+	// protected function attributes() { 
+	// 	// return an array of attribute names and their values
+ //  		$attributes = array();
+	//   	foreach(static::$db_fields as $field) {
+	//     if(property_exists($this, $field)) {
+	//       $attributes[$field] = $this->$field;
+	//     }
+	//   }
+	//   return $attributes;
+	// }
+	
 	protected function attributes(){ 
-	  return get_object_vars($this);
+		return get_object_vars($this);
 	}
 	
 	protected function sanitized_attributes(){
@@ -72,6 +83,24 @@ class DatabaseObject
 	  }
 	}
 
+	public static function read($InfoToFind, $inWhichColumn){
+	    global $database;
+	    $InfoToFind = $database->cleanString($InfoToFind);
+	    $inWhichColumn = $database->cleanString($inWhichColumn);
+
+
+	    $sql  = "SELECT * FROM ";
+	    $sql .= static::$table_name;
+	    $sql .= " WHERE ".$inWhichColumn." = '$InfoToFind'";
+	    $sql .= " LIMIT 1";
+	    $result_array = $database->query($sql);
+		if(!mysqli_num_rows($result_array) > 0) {
+		    return false;
+		}else{
+			return true;
+		}
+	}
+
 
 	public function update() {
 	  global $database;
@@ -98,6 +127,7 @@ class DatabaseObject
 	  return ($database->affected_rows() == 1) ? true : false;
 	
 	}
+
 }
 
 			

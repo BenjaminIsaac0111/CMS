@@ -1,23 +1,10 @@
 <?php 
+
+//can break into a function belonging to the user class, have a flag for error in user.
+//If the flag is set then that prevents create from happeing and the returns a error code???
+
 $errorMessage;
-
-if(isset($_POST['regEmail']) && $database->validateEmail($email = $_POST['regEmail'])){
-	$errorMessage = "Invalid Email: ".$email."<br>";
-}
-
-if(isset($_POST['regEmail']) && user::checkExists($email = $_POST['regEmail'])){
-	$errorMessage = "Email already exists in our database: ".$email."<br>";
-}
-
-if(isset($_POST['regEmail']) && $database->match($_POST['regEmail'], $_POST['confirmEmail'])){
-	$errorMessage .= "Emails do not match!<br>";
-}
-
-if(isset($_POST['regPassword']) && $database->match($_POST['regPassword'], $_POST['confirmPassword'])){
-	$errorMessage .= "Passwords do not match!<br>";
-}
-//error need to be placed before so that if the $errorMessage isset then we can print it out
-require_once('includes_MarkUP/HTMLregForm.php');
+//error needs to be placed before so that if the $errorMessage isset then we can print it out
 
 if (isset($_POST['createUser'])) {
 	$user = new user();
@@ -28,14 +15,18 @@ if (isset($_POST['createUser'])) {
 	$user->email = $_POST['regEmail'];
 	$user->password = $_POST['regPassword'];
 	$user->termsAndConditionsCheck = $_POST['termsAndConditionsCheck'];
-	
-	if ($user->create()) {
-		if (isset($_POST['logout'])){
-			$session->login($user);
-			header('Refresh:0');
-		}
-		
+
+	// var_dump($user->validateRegstrationForm($_POST['confirmEmail'],$_POST['confirmPassword']));
+	// var_dump($user->generateRegstrationError($_POST['confirmEmail'],$_POST['confirmPassword']));
+
+	if(!$user->validateRegstrationForm($_POST['confirmEmail'],$_POST['confirmPassword'])){
+		$errorMessage = $user->generateRegstrationError($_POST['confirmEmail'],$_POST['confirmPassword']);
+	}else{
+		$user->create();
 	}
 }
+
+require_once('includes_MarkUP/HTMLregForm.php');
+
 
 ?>
