@@ -56,3 +56,8 @@ array(3)
  "helloworld@gmail.com" ["regPassword"]=> string(4)
  "2531" 
 }
+
+INSERT INTO user 
+(errorMessage, id, username, firstname, lastname, ageRange, email, confirmEmail, password, confirmPassword, termsAndConditionsCheck, adminFlag)
+VALUES 
+('User: benjamintaya0111@gmail.com exists!<br>Passwords do not match!<br>User: benjamintaya0111@gmail.com exists!<br>Passwords do not match!<br>', '', 'wispytitan', 'Benjamin', 'Wilson', '15-24', 'benjamintaya0111@gmail.com', 'benjamintaya0111@gmail.com', '222', 'benjamintaya0111@gmail.com', '1', '')
