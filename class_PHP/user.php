@@ -4,7 +4,17 @@ require_once('databaseObject.php');
 class user extends DatabaseObject
 {
 	protected static $table_name="user";//for self identifying the table to build from
-	protected static $db_fields = array('id','username','firstname','lastname','ageRange','email','password','termAndConditionsCheck','adminFlag');
+	// protected static $db_fields = array(
+	// 	'id',
+	// 	'username',
+	// 	'firstname',
+	// 	'lastname',
+	// 	'ageRange',
+	// 	'email',
+	// 	'password',
+	// 	'termAndConditionsCheck',
+	// 	'adminFlag'
+	// );
 
 	
 	
@@ -14,14 +24,14 @@ class user extends DatabaseObject
 	public $firstname;
 	public $lastname;
 	public $ageRange;
-	
 	public $email;
-	
 	public $password;//password always needed from table required
-	
 	public $termsAndConditionsCheck;
 	
-	public $adminFlag = FALSE;//always false unless specified.
+	public $adminFlag = false;//always false unless specified by an admin.
+	
+	
+	
 
 
 
@@ -36,8 +46,9 @@ class user extends DatabaseObject
 	    $sql .= " AND password = '$password' ";
 	    $sql .= " LIMIT 1";
 	    $result_array = static::build($sql);
+	    var_dump($result_array);
 		return !empty($result_array) ? array_shift($result_array) : false;
-		}
+	}
 
 	public function generateRegstrationError($confirmEmail,$confirmPassword){
 
@@ -57,7 +68,6 @@ class user extends DatabaseObject
 		 }
 		 return $errorMessage;
 	}		
-
 
 	public function validateRegstrationForm($confirmEmail,$confirmPassword){
 
@@ -111,10 +121,8 @@ class user extends DatabaseObject
 		}else{
 			return true;
 		}
-		
 	}
-
-
+	
 
 
 

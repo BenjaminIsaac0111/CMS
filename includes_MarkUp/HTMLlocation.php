@@ -19,7 +19,7 @@ require_once('class_PHP/location.php');
                    </p>
                  </a>
                  <?php if($session->isLoggedIn()):?>
-                  <a class="btn btn-info list-group-item" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?add=1">Add to Favorites <span class="glyphicon glyphicon-star-empty"></span></a>
+                  <a class="btn btn-info list-group-item" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?add=<?php echo $location->id; ?>">Add to Favorites <span class="glyphicon glyphicon-star-empty"></span></a>
                  <?php endif; ?>
                </div>
          </div>

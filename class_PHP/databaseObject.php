@@ -43,7 +43,7 @@ class DatabaseObject
 	
 	// protected function attributes() { 
 	// 	// return an array of attribute names and their values
- //  		$attributes = array();
+ 	//  	$attributes = array();
 	//   	foreach(static::$db_fields as $field) {
 	//     if(property_exists($this, $field)) {
 	//       $attributes[$field] = $this->$field;

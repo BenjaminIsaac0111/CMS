@@ -4,6 +4,7 @@
 //If the flag is set then that prevents create from happeing and the returns a error code???
 
 $errorMessage;
+$isValid;
 //error needs to be placed before so that if the $errorMessage isset then we can print it out
 
 if (isset($_POST['createUser'])) {
@@ -22,6 +23,7 @@ if (isset($_POST['createUser'])) {
 	if(!$user->validateRegstrationForm($_POST['confirmEmail'],$_POST['confirmPassword'])){
 		$errorMessage = $user->generateRegstrationError($_POST['confirmEmail'],$_POST['confirmPassword']);
 	}else{
+		$isValid = true;
 		$user->create();
 	}
 }

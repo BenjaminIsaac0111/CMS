@@ -71,7 +71,7 @@
 					  <button type="button" class="close" data-dismiss="alert">&times;</button>
 					  <strong><?php echo $errorMessage;  ?></strong>
 					</div>
-				<?php endif; ?>			
+				<?php endif;?>		
 			</fieldset>
 	</form>
 </div>
