@@ -11,14 +11,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">A Spacers Guide to the Solar System</a>
+      <a class="navbar-brand" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">ADMIN</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <?php if($session->isAdmin()): ?>
-          <li><a href="private/indexAdmin.php">Admin Panel</a></li>
-
+          <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?loc=true">Location Manager</a></li>
+          <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?user=true">User Manager</a></li>
       <?php endif; ?>
       </ul>
         <?php
