@@ -1,6 +1,13 @@
 <?php 
 require_once('class_PHP/location.php');
 $location = location::findAll();
+
+if (isset($_GET['remove'])) {
+  location::deleteLocation($_GET['remove']);
+   header('Location: '.htmlspecialchars($_SERVER['PHP_SELF']));
+}
+
+
 foreach($location as $location): ?> 
   <div class="col-lg-3">
     <div class="panel panel-info">
@@ -25,6 +32,4 @@ foreach($location as $location): ?>
       </div>
     </div>
   </div>
-<?php endforeach; 
-
-?>
+<?php endforeach; ?>
