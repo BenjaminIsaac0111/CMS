@@ -35,10 +35,10 @@
 					</div>
 				</div>
 				<div class="form-group">
-						<label for="inputEmail" class="col-lg-2 control-label">Email:*</label>
+						<label for="email" class="col-lg-2 control-label">Email:*</label>
 					<div class="col-lg-10">
-						<input type="text" class="form-control" id="regEmail" name="regEmail" aria-describedby="Email" placeholder="Email" value="<?php echo isset($_POST['regEmail']) ? $_POST['regEmail'] : '' ?>" required>
-						<input type="text" class="form-control" id="confirmEmail" name="confirmEmail" aria-describedby="Email" placeholder="Confirm Email" value="<?php echo isset($_POST['confirmEmail']) ? $_POST['confirmEmail'] : '' ?>" required>
+						<input type="text" class="form-control" id="regEmail" name="regEmail" aria-describedby="regEmail" placeholder="Email" value="<?php echo isset($_POST['regEmail']) ? $_POST['regEmail'] : '' ?>" required>
+						<input type="text" class="form-control" id="confirmEmail" name="confirmEmail" aria-describedby="confirmEmail" placeholder="Confirm Email" value="<?php echo isset($_POST['confirmEmail']) ? $_POST['confirmEmail'] : '' ?>" required>
 					</div>
 
 				</div>
@@ -46,7 +46,7 @@
 						<label for="password" class="col-lg-2 control-label">Password:*</label>
 					<div class="col-lg-10">
 						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Password" value="<?php echo isset($_POST['regPassword']) ? $_POST['regPassword'] : '' ?>" required>
-						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" value="<?php echo isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>"required>
+						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" aria-describedby="confirmPassword"  placeholder="Confirm Password" value="<?php echo isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>" required>
 					</div>
 				</div>
 				<div class="form-group">
