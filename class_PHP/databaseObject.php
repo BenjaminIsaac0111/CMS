@@ -52,23 +52,11 @@ class DatabaseObject
 		return $object;
 	}
 
-	private function hasAttribute($attribute){
-		//find out what attributes are present to the object.
- 
+	private function hasAttribute($attribute){ 
 		$object_vars = get_object_vars($this);
 		return array_key_exists($attribute, $object_vars);
 	}
 	
-	// protected function attributes() { 
-	// 	// return an array of attribute names and their values
- 	//  	$attributes = array();
-	//   	foreach(static::$db_fields as $field) {
-	//     if(property_exists($this, $field)) {
-	//       $attributes[$field] = $this->$field;
-	//     }
-	//   }
-	//   return $attributes;
-	// }
 	
 	protected function attributes(){ 
 		return get_object_vars($this);

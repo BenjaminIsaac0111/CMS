@@ -1,6 +1,6 @@
 <?php 
-require_once('db/database.php');
-require_once('databaseObject.php');
+require_once('../db/database.php');
+require_once('../databaseObject.php');
 class user extends DatabaseObject
 {
 	protected static $table_name="user";//for self identifying the table to build from

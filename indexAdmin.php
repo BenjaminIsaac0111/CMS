@@ -1,16 +1,16 @@
 <?php 
 	include('includes_MarkUp/HTMLheader.php');
-	include('includes_MarkUp/HTMLnavbarAdmin.php'); 
 ?>
 <?php if ($session->isAdmin()):?>
 	<body>
+	<?php require_once('includes_MarkUp/HTMLnavbarAdmin.php');  ?>
+	<div class="container-fluid">
 	<?php
-		if (isset($_GET['loc'])) {
-			if ($_GET['loc']) {
-				require_once('includes_MarkUp/HTMLlocation.php');
-			}
-		}
+		require_once('includes_MarkUp/HTMLlocationAdmin.php');
+		require_once('includes_MarkUp/HTMLuserList.php');
+
 	?>
+	</div>
 	</body>
 </html>
 <?php else: ?>

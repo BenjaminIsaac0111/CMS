@@ -10,13 +10,21 @@ class location extends DatabaseObject
 
 
 	protected static $table_name="location";
-	// protected static $db_fields = array(
-	// 	'id',
-	// 	'name',
-	// 	'imgFileName',
-	// 	'description',
-	// );
+	protected static $db_fields = array(
+		'id',
+		'name',
+		'imgFileName',
+		'description',
+	);
 
+	public static function deleteLocation($id){
+		$location = static::findById($id);
+		if ($location) {
+			$location->delete();
+		}else{
+			unset($_GET['remove']);
+		}
+	}
 
 }
 ?>
