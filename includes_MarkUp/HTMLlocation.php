@@ -1,4 +1,4 @@
-<section id="location" name="location">
+<section id="location">
 <div class="row">
 
 <?php 
@@ -11,7 +11,7 @@ foreach($location as $location): ?>
             <h3 class="panel-title"><?php echo $location->name;?></h3>
          </div>
          <div class="panel-body">
-            <img class="img-responsive" src="img/<?php echo $location->imgFileName;?>">
+          <img class="img-responsive" src="img/<?php echo $location->imgFileName;?>" alt="Image of <?php echo $location->name;?>">
                <div class="list-group">
                  <a href="#" class="list-group-item">
                    <h4 class="list-group-item-heading">
@@ -30,4 +30,5 @@ foreach($location as $location): ?>
    </div>
  <?php endforeach; ?>
 </div>
+</section>
   
