@@ -1,6 +1,6 @@
 	<form method="post" class="form-inline navbar-form navbar-right" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 	   <div class="form-group">
-	      <input type="text" class="form-control" id="email" name="email" aria-describedby="Email" placeholder="Email" required>
+	      <input type="text" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Email" required>
 	   </div>
 	   <div class="form-group">
 	      <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>

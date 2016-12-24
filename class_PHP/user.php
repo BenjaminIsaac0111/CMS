@@ -31,10 +31,6 @@ class user extends DatabaseObject
 	public $adminFlag = false;//always false unless specified by an admin.
 	
 	
-	
-
-
-
 	public static function authenticate($email="", $password="") {
 	    global $database;
 	    $email = $database->cleanString($email);
@@ -46,7 +42,7 @@ class user extends DatabaseObject
 	    $sql .= " AND password = '$password' ";
 	    $sql .= " LIMIT 1";
 	    $result_array = static::build($sql);
-	    var_dump($result_array);
+	    //var_dump($result_array);
 		return !empty($result_array) ? array_shift($result_array) : false;
 	}
 
@@ -121,6 +117,20 @@ class user extends DatabaseObject
 		}else{
 			return true;
 		}
+	}
+
+	public static function toggleUserAdministrator($id){
+		global $database;
+		$id = $database->cleanString($id);
+		
+		$userTomakeAdmin = static::findById($id);
+		//var_dump($userTomakeAdmin);
+		if(!$userTomakeAdmin->adminFlag) {
+			$userTomakeAdmin->adminFlag = true;
+		}elseif($userTomakeAdmin->adminFlag) {
+			$userTomakeAdmin->adminFlag = false;
+		}
+		$userTomakeAdmin->update();
 	}
 	
 
