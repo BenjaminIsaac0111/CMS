@@ -11,9 +11,9 @@ class DatabaseObject
 
   	public static function findBySql($sql) {
     global $database;
-    //echo $sql;
     $result_set = $database->query($sql);
     $object_array = array();
+    
     while ($row = $database->fetchArray($result_set)) {
       $object_array[] = static::buildObject($row);
     }
@@ -27,9 +27,7 @@ class DatabaseObject
 
 
 	protected static function build($sql){
-		//pull in database class object
 		global $database;
-
 		$result = $database->query($sql);
 		
 		$objectArray = array();
@@ -65,7 +63,6 @@ class DatabaseObject
 	protected function sanitized_attributes(){
 	  global $database;
 	  $clean_attributes = array();
-	  	  // sanitize the values before submitting
 	  foreach($this->attributes() as $key => $value){
 	    $clean_attributes[$key] = $database->cleanString($value);
 	  }

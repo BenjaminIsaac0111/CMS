@@ -12,12 +12,11 @@ if (isset($_POST['createUser'])) {
 	$user->password = $_POST['regPassword'];
 	$user->termsAndConditionsCheck = $_POST['termsAndConditionsCheck'];
 
-
-
 	if(!$user->validateRegstrationForm($_POST['confirmEmail'],$_POST['confirmPassword'])){
 		$errorMessage = $user->generateRegstrationError($_POST['confirmEmail'],$_POST['confirmPassword']);
 	}else{
 		$isValid = true;
+		$user->hashPassword();
 		$user->create();
 	}
 }
