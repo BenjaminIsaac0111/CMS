@@ -6,7 +6,11 @@
 <?php if ($session->isAdmin()):?>
 	<div class="container-fluid">
 	<?php
-		require_once('includes_MarkUp/HTMLlocationAdmin.php');
+		if (isset($_GET['update'])) {
+			require_once('includes_MarkUP/HTMLlocationUpdateForm.php');
+		}else{
+			require_once('includes_MarkUp/HTMLlocationAdmin.php');
+		}
 		require_once('includes_MarkUp/HTMLuserList.php');
 
 	?>
