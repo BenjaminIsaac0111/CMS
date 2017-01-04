@@ -30,7 +30,7 @@ if (isset($_POST['email']))
       $password = $_POST['password'];
 
       if ($user = user::authenticate($email,$password)) {
-         $session->login($user);//login with id put into session. then refer to the user by the current id.
+         $session->login($user);
          header("Refresh:0");
       }elseif(!user::read($email, $column = 'email')){
          $errorMessage = "No user '";

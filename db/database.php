@@ -77,7 +77,7 @@ class database{
 			}
 		}
 
-		public function insert_id(){
+		public function insertId(){
 			return mysqli_insert_id($this->connection);
 		}
 

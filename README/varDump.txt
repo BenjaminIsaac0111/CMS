@@ -61,3 +61,19 @@ INSERT INTO user
 (errorMessage, id, username, firstname, lastname, ageRange, email, confirmEmail, password, confirmPassword, termsAndConditionsCheck, adminFlag)
 VALUES 
 ('User: benjamintaya0111@gmail.com exists!<br>Passwords do not match!<br>User: benjamintaya0111@gmail.com exists!<br>Passwords do not match!<br>', '', 'wispytitan', 'Benjamin', 'Wilson', '15-24', 'benjamintaya0111@gmail.com', 'benjamintaya0111@gmail.com', '222', 'benjamintaya0111@gmail.com', '1', '')
+
+
+array(1) 
+{ [0]=> object(user)#5 (9) 
+{ 
+["id"]=> string(1) "1" 
+["username"]=> string(10) "wispytitan" 
+["firstname"]=> string(8) "Benjamin" 
+["lastname"]=> string(6) "Wilson" 
+["ageRange"]=> string(5) "15-24" 
+["email"]=> string(20) "wispytitan@gmail.com" 
+["password"]=> string(4) "2531" 
+["termsAndConditionsCheck"]=> string(1) "1" 
+["adminFlag"]=> string(1) "1" 
+} 
+}
