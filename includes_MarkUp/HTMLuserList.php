@@ -8,8 +8,7 @@ if (isset($_GET['makeAdmin'])) {
 ?>
 <section id="user">
 <h1 class="text-center">User Control</h1>
-  <div class="row">
-      <table class="table table-striped">
+       <table class="table table-striped">
       <tr>
         <th>ID</th>
         <th>Username</th>
@@ -38,6 +37,5 @@ if (isset($_GET['makeAdmin'])) {
       </tr>
       <?php endforeach; ?>
     </table>
-  </div>
 </section>
 

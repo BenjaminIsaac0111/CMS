@@ -18,6 +18,9 @@ if (isset($_POST['createUser'])) {
 		$isValid = true;
 		$user->hashPassword();
 		$user->create();
+		$session->login($user);
+		header('Location: index.php');
+
 	}
 }
 

@@ -11,7 +11,13 @@ include('includes_MarkUp/HTMLheader.php');
 
 	require_once('includes_MarkUp//HTMLjumbotron.php');
 	require_once('class_PHP/location.php');
-	require_once('includes_MarkUp/HTMLlocation.php');
+
+	if(isset($_GET['favorites'])){
+		require_once('includes_MarkUp/HTMLlocationFav.php');
+	}else{
+		require_once('includes_MarkUp/HTMLlocation.php');
+	}
+	
 ?>
 </div>
 
