@@ -2,6 +2,23 @@
 require_once('db/database.php');
 class DatabaseObject
 {
+
+	public static function findAll() {
+		$sql  = "SELECT * FROM ";
+		$sql .=  static::$table_name;
+		return static::findBySql($sql);
+  	}
+
+  	public static function findBySql($sql) {
+    global $database;
+    $result_set = $database->query($sql);
+    $object_array = array();
+    
+    while ($row = $database->fetchArray($result_set)) {
+      $object_array[] = static::buildObject($row);
+    }
+    return $object_array;
+  }
 	
 	public static function findById($id){
     $result_array = static::build("SELECT * FROM ".static::$table_name." WHERE id='$id' LIMIT 1");
@@ -10,7 +27,6 @@ class DatabaseObject
 
 
 	protected static function build($sql){
-		//pull in database class object
 		global $database;
 		$result = $database->query($sql);
 		
@@ -34,23 +50,11 @@ class DatabaseObject
 		return $object;
 	}
 
-	private function hasAttribute($attribute){
-		//find out what attributes are present to the object.
- 
+	private function hasAttribute($attribute){ 
 		$object_vars = get_object_vars($this);
 		return array_key_exists($attribute, $object_vars);
 	}
 	
-	// protected function attributes() { 
-	// 	// return an array of attribute names and their values
- //  		$attributes = array();
-	//   	foreach(static::$db_fields as $field) {
-	//     if(property_exists($this, $field)) {
-	//       $attributes[$field] = $this->$field;
-	//     }
-	//   }
-	//   return $attributes;
-	// }
 	
 	protected function attributes(){ 
 		return get_object_vars($this);
@@ -59,7 +63,6 @@ class DatabaseObject
 	protected function sanitized_attributes(){
 	  global $database;
 	  $clean_attributes = array();
-	  	  // sanitize the values before submitting
 	  foreach($this->attributes() as $key => $value){
 	    $clean_attributes[$key] = $database->cleanString($value);
 	  }
@@ -76,7 +79,7 @@ class DatabaseObject
 		$sql .= join("', '", array_values($attributes));
 		$sql .= "')";
 	  if($database->query($sql)) {
-	    $this->id = $database->insert_id();
+	    $this->id = $database->insertId();
 	    return true;
 	  } else {
 	    return false;

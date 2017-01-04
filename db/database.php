@@ -33,8 +33,8 @@ class database{
 		
 //run a query
 		public function query($sql){
+			//var_dump($sql);
 			$result = mysqli_query($this->connection,$sql);
-			//echo $sql."<br>";
 			$this->confirmQuery($result);
 			return $result;
 		} 
@@ -77,14 +77,21 @@ class database{
 			}
 		}
 
-		public function insert_id(){
-// get the last id inserted over the current db connection
+		public function insertId(){
 			return mysqli_insert_id($this->connection);
 		}
 
 		public function affected_rows(){
 			return mysqli_affected_rows($this->connection);
 		}
+
+		public function fetchArray($result_set) {
+			return mysqli_fetch_array($result_set);
+		}
+
+		public function num_rows($result_set) {
+	    	return mysqli_num_rows($result_set);
+	  	}
 	}
 $database = new database();
 ?>

@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="">
 <div class="well well-lg">
 	<form method="post" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?register=true">
 		<fieldset>
@@ -35,10 +35,10 @@
 					</div>
 				</div>
 				<div class="form-group">
-						<label for="inputEmail" class="col-lg-2 control-label">Email:*</label>
+						<label for="email" class="col-lg-2 control-label">Email:*</label>
 					<div class="col-lg-10">
-						<input type="text" class="form-control" id="regEmail" name="regEmail" aria-describedby="Email" placeholder="Email" value="<?php echo isset($_POST['regEmail']) ? $_POST['regEmail'] : '' ?>" required>
-						<input type="text" class="form-control" id="confirmEmail" name="confirmEmail" aria-describedby="Email" placeholder="Confirm Email" value="<?php echo isset($_POST['confirmEmail']) ? $_POST['confirmEmail'] : '' ?>" required>
+						<input type="text" class="form-control" id="regEmail" name="regEmail" aria-describedby="regEmail" placeholder="Email" value="<?php echo isset($_POST['regEmail']) ? $_POST['regEmail'] : '' ?>" required>
+						<input type="text" class="form-control" id="confirmEmail" name="confirmEmail" aria-describedby="confirmEmail" placeholder="Confirm Email" value="<?php echo isset($_POST['confirmEmail']) ? $_POST['confirmEmail'] : '' ?>" required>
 					</div>
 
 				</div>
@@ -46,7 +46,7 @@
 						<label for="password" class="col-lg-2 control-label">Password:*</label>
 					<div class="col-lg-10">
 						<input type="password" class="form-control" id="regPassword" name="regPassword" placeholder="Password" value="<?php echo isset($_POST['regPassword']) ? $_POST['regPassword'] : '' ?>" required>
-						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" value="<?php echo isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>"required>
+						<input type="password" class="form-control" id="confirmPassword" name="confirmPassword" aria-describedby="confirmPassword"  placeholder="Confirm Password" value="<?php echo isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -64,6 +64,8 @@
 					<div class="form-group">
 					      <div class="col-lg-10 col-lg-offset-2">
 					        <button type="submit" name="createUser" value="true" class="btn btn-primary">Submit</button>
+					       	<a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" class="btn btn-danger" role="button">Cancel</a>
+
 					      </div>
 					</div>
 				<?php if(isset($errorMessage)): ?>
@@ -71,7 +73,7 @@
 					  <button type="button" class="close" data-dismiss="alert">&times;</button>
 					  <strong><?php echo $errorMessage;  ?></strong>
 					</div>
-				<?php endif; ?>			
+				<?php endif;?>		
 			</fieldset>
 	</form>
 </div>
