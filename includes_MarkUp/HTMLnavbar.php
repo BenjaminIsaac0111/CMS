@@ -19,6 +19,11 @@
       <?php if($session->isAdmin()): ?>
           <li><a href="indexAdmin.php">Admin Panel</a></li>
 
+      <?php endif;
+      
+       if($session->isLoggedIn()): ?>
+        <li><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?favorites=true">Favorites</a></li>
+
       <?php endif; ?>
       </ul>
         <?php

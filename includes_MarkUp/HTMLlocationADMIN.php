@@ -1,12 +1,18 @@
 <section id="location">
-<h1 class="text-center">Location Control</h1>
 <div class="row">
+<h1 class="text-center">Location Control</h1>
 <?php 
 require_once('class_PHP/location.php');
 if ($session->isAdmin()) {
   if (isset($_GET['remove'])) {
     location::deleteLocation($_GET['remove']);
   }
+  if (isset($_POST['updateLocation'])) {
+  $location = location::findById($_POST['updateLocation']);
+  $location->name = $_POST['LocName'];
+  $location->description = $_POST['LocDescription'];
+  $location->update();
+}
 }
 $location = location::findAll();
 foreach($location as $location): ?> 
@@ -27,7 +33,9 @@ foreach($location as $location): ?>
               </p>
             </a>
             <?php if($session->isLoggedIn()):?>
-              <a class="btn btn-info list-group-item" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?remove=<?php echo $location->id; ?>">Remove<span class="glyphicon glyphicon-remove"></span></a>
+              <a class="btn btn-warning list-group-item" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?update=<?php echo $location->id; ?>">Update<span class="glyphicon glyphicon-pencil"></span>
+              </a>
+              <a class="btn btn-danger list-group-item" href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?remove=<?php echo $location->id; ?>">Remove<span class="glyphicon glyphicon-remove"></span></a>
             <?php endif; ?>
           </div>
         </div>

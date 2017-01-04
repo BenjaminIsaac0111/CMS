@@ -1,4 +1,3 @@
-<div class="">
 <div class="well well-lg">
 	<form method="post" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>?register=true">
 		<fieldset>
@@ -76,7 +75,6 @@
 				<?php endif;?>		
 			</fieldset>
 	</form>
-</div>
 </div>
 
 
