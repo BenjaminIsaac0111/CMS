@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2016 at 12:13 AM
+-- Generation Time: Jan 05, 2017 at 05:06 PM
 -- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `tourism`
 --
+CREATE DATABASE IF NOT EXISTS `tourism` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `tourism`;
 
 -- --------------------------------------------------------
 
@@ -38,10 +40,10 @@ CREATE TABLE `location` (
 --
 
 INSERT INTO `location` (`id`, `name`, `imgFileName`, `description`) VALUES
-(1, 'Mars', 'mars.jpg', '   Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
-(2, 'Mars', 'mars.jpg', '   Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
-(3, 'Mars', 'mars.jpg', '   Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
-(4, 'Mars', 'mars.jpg', '   Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the "Red Planet" because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.');
+(4, 'Mars', 'mars.jpg', 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the &quot;Red Planet&quot; because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
+(5, 'Mars', 'mars.jpg', 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the &quot;Red Planet&quot; because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
+(6, 'Mars', 'mars.jpg', 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the &quot;Red Planet&quot; because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.'),
+(8, 'Mars', 'mars.jpg', 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, after Mercury. Named after the Roman god of war, it is often referred to as the &quot;Red Planet&quot; because the iron oxide prevalent on its surface gives it a reddish appearance. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.');
 
 -- --------------------------------------------------------
 
@@ -66,8 +68,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `firstname`, `lastname`, `ageRange`, `email`, `password`, `termsAndConditionsCheck`, `adminFlag`) VALUES
-(1, 'wispytitan', 'Benjamin', 'Wilson', '15-24', 'wispytitan@gmail.com', '2531', 1, 1),
-(32, 'helloworld', 'Benjamin', 'Wilson', '15-24', 'benjamintaya0111@gmail.com', '2531', 1, 0);
+(1, 'wispytitan', 'Benjamin', 'Wilson', '15-24', 'wispytitan@gmail.com', '$2y$10$tJDxAO4zyvRuptb1rKjaseEzxSfL.Q4gOwjj50nswkYfOvi3HEH.G', 1, 1),
+(33, 'helloworld', 'Benjamin', 'Wilson', '15-24', 'benjamintaya0111@gmail.com', '$2y$10$tJDxAO4zyvRuptb1rKjaseEzxSfL.Q4gOwjj50nswkYfOvi3HEH.G', 1, 0),
+(36, 'User', 'User', 'Name', '15-24', 'user@gmail.com', '$2y$10$zE7LtY6GJNiifZCkFAfqsOVOL0DWZl376Eh83./8xlmF8q7sqOtyW', 1, 0),
+(37, 'Admin', 'Admin', 'Name', '15-24', 'admin@gmail.com', '$2y$10$1sORSaa1GCDlbIJzi4.z0uS1cY/L6P4lXqmWS7ZQnvR4ynedPOmcy', 1, 1),
+(40, 'Jesus', 'John', 'Doe', '15-24', 'johndoe@gmail.com', '$2y$10$1..69C/iG/kXqRy6pokkc.h9Aqzj/TOYlFCVPMdN9seAoW5zjDPoS', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -93,12 +98,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
