@@ -1,11 +1,8 @@
 # ISDPractice
 
-This is just a personal project. if you wish to commit then
-just make sure you teach me about what you have done, as
-I am a novice in programming and wish to learn about it.
-
 This repo serves as a means to understanding OOP in practice
-whilst using PHP/SQL.
+and using PHP/SQL. It runs on XAMPP, you will need to run the SQL scripts and check the connections
+to the database.
 
 If you have a question,
 email me at:
